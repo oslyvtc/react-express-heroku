@@ -1,0 +1,12 @@
+.twit {
+	display: flex;
+}
+
+.twit__content-header {
+	display: flex;
+	align-items: center;
+}
+
+.twit__content {
+	text-align: left;
+}

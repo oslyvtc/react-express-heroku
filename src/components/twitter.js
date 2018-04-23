@@ -11,12 +11,6 @@ class Twitter extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-   fetch('/api/tweets')
-    .then(res => res.json())
-    .then(port => this.setState({port}, () => console.log(port)));
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     fetch('/api/tweets', {

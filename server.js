@@ -16,13 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(express.static(path.resolve(__dirname, 'public')))
-
 app.use(bodyParser.json());
-
-app.get('/api/tweets', function(req, res){
-	res.json( PORT )
-});
 
 app.post('/api/tweets', function(req, res){
 	var clientName = req.body.name;
@@ -43,6 +37,7 @@ if (!dev) {
 
 if (dev) {
 	app.use(morgan('dev'))
+	app.use(express.static(path.resolve(__dirname, 'public')))
 }
 
 var server = createServer(app)
